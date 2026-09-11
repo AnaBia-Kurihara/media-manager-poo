@@ -1,4 +1,6 @@
-package br.com.minhasmusicas.modelos;
+package br.com.minhasmusicas.main;
+import br.com.minhasmusicas.modelos.Musicas;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;

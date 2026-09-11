@@ -1,4 +1,5 @@
 package br.com.minhasmusicas.modelos;
 
-public class Genero {
+public enum Genero {
+    ROCK, POP, SERTANEJO, FUNK, MPB, ELETRONICA, RAP
 }

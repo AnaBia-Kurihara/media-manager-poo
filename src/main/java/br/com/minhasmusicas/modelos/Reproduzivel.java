@@ -1,4 +1,7 @@
 package br.com.minhasmusicas.modelos;
 
-public interface jj {
+public interface Reproduzivel {
+    public void reproduz();
+    public void curte();
+    int getClassificacao();
 }

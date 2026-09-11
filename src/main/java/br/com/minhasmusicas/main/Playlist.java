@@ -1,4 +1,8 @@
-package br.com.minhasmusicas.modelos;
+package br.com.minhasmusicas.main;
+
+import br.com.minhasmusicas.modelos.Audio;
+import br.com.minhasmusicas.modelos.Genero;
+import br.com.minhasmusicas.modelos.Musicas;
 
 import java.util.ArrayList;
 import java.util.Comparator;
