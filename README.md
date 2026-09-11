@@ -13,9 +13,9 @@
 
 ---
 
-## 📌 Sobre o projeto
+## Sobre o projeto
 
-**Minhas Músicas** é um sistema de linha de comando (CLI) para catalogar, classificar e organizar conteúdos de áudio — músicas e podcasts — em uma playlist única. O projeto foi desenhado como um estudo de caso de **Orientação a Objetos em Java**, priorizando um modelo de domínio limpo em vez de complexidade acidental: sem framework, sem banco de dados, sem infraestrutura — só o design.
+**Minhas Músicas** é um sistema de linha de comando (CLI) para catalogar, classificar e organizar conteúdos de áudio, músicas e podcasts, em uma playlist única. O projeto foi desenhado como um estudo de caso de **Orientação a Objetos em Java**.
 
 Cada conteúdo cadastrado recebe uma **classificação dinâmica**, calculada por regras próprias de cada tipo de mídia (reproduções para músicas, curtidas para podcasts), e pode ser ordenado, filtrado e persistido em arquivo texto.
 
@@ -23,16 +23,16 @@ Cada conteúdo cadastrado recebe uma **classificação dinâmica**, calculada po
 
 ---
 
-## 🧠 Conceitos de POO aplicados
+## Conceitos de POO aplicados
 
 Este projeto foi construído explicitamente para exercitar os quatro pilares da orientação a objetos:
 
 | Pilar | Onde aparece |
 |---|---|
-| **Abstração** | `Audio` é uma classe abstrata que define o que todo conteúdo reproduzível tem em comum (título, reproduções, curtidas), sem se preocupar com os detalhes de cada tipo. |
+| **Abstração** | `Audio` é uma classe abstrata que define o que todo conteúdo reproduzível tem em comum (título, reproduções, curtidas). |
 | **Herança** | `Musicas` e `Podcast` estendem `Audio`, reaproveitando comportamento comum e especializando apenas o que muda (álbum/gênero vs. apresentador/descrição). |
 | **Polimorfismo** | `Playlist` manipula uma lista de `Audio` de forma uniforme — `ordenarPorClassificacao()` funciona para músicas e podcasts ao mesmo tempo, cada um calculando sua própria regra de `getClassificacao()`. |
-| **Encapsulamento** | Atributos privados com acesso controlado via getters/setters; regras de negócio (ex: cálculo de classificação) ficam dentro da própria classe, não espalhadas pelo código cliente. |
+| **Encapsulamento** | Atributos privados com acesso controlado via getters/setters; regras de negócio ficam dentro da própria classe, não espalhadas pelo código cliente. |
 | **Interface** | `Reproduzivel` define o contrato mínimo (`reproduz`, `curte`, `getClassificacao`) que qualquer mídia reproduzível deve cumprir. |
 
 ### Regras de classificação (exemplo de polimorfismo em ação)
@@ -51,7 +51,7 @@ Cada subtipo implementa sua própria versão de `getClassificacao()` — o resta
 
 ---
 
-## 🗺️ Diagrama de classes
+## Diagrama de classes
 
 ```mermaid
 classDiagram
@@ -183,7 +183,7 @@ O sistema roda via terminal e oferece um menu interativo:
 
 ---
 
-## 🚀 Como executar
+## Como executar
 
 ### Pré-requisitos
 
@@ -214,7 +214,7 @@ mvn test
 
 ---
 
-## 🧪 Testes
+## Testes
 
 A classe `MusicaTest` valida a regra de negócio central do domínio — o cálculo de classificação de uma música com base no número de reproduções:
 
@@ -226,24 +226,3 @@ void classificacaoDeveSerDezQuandoReproducoesMaiorQue200() { ... }
 void classificacaoDeveSerSeteQuandoReproducoesMenorOuIgualA200() { ... }
 ```
 
----
-
-## 🗺️ Roadmap / Próximos passos
-
-- [ ] Permitir escolher o gênero no filtro do relatório (hoje é fixo em `SERTANEJO` como exemplo)
-- [ ] Persistir também podcasts (hoje `ArquivoUtil` só salva/carrega `Musicas`)
-- [ ] Migrar armazenamento de `.txt` para um formato estruturado (JSON) ou banco de dados
-- [ ] Adicionar cobertura de testes para `Playlist`, `Podcast` e `MinhasPreferidas`
-- [ ] Adicionar arquivo de licença (ex: MIT)
-
----
-
-## 👩‍💻 Autora
-
-Desenvolvido por **[AnaBia Kurihara](https://github.com/AnaBia-Kurihara)** como projeto de estudo de Programação Orientada a Objetos em Java.
-
-<div align="center">
-
-Se este projeto te ajudou a estudar POO, considere deixar uma ⭐
-
-</div>
